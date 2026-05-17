@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO: Primary Meta Tags -->
+  <title>Live Cam Entertainment – Watch Live Performers Streaming Now</title>
+  <meta name="description" content="Browse thousands of live performers streaming right now. HD streams, real-time interaction, exclusive shows. Watch free 24/7." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://yoursite.blogspot.com/" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Live Cam Entertainment – Watch Live Performers Streaming Now" />
+  <meta property="og:description" content="Browse thousands of live performers streaming right now. HD streams, real-time interaction, exclusive shows." />
+  <meta property="og:url" content="https://yoursite.blogspot.com/" />
+  <meta property="og:site_name" content="Live Cam Entertainment" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live Cam Entertainment – Watch Live Performers Streaming Now" />
+  <meta name="twitter:description" content="Browse thousands of live performers streaming right now. HD streams, real-time interaction, exclusive shows." />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://i.bgicdn.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" />
+
+  <style>
+    /* ===========================
+       CSS RESET & BASE
+    =========================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-primary:     #0a0a0f;
+      --bg-secondary:   #111118;
+      --bg-card:        #16161f;
+      --bg-card-hover:  #1c1c28;
+      --accent:         #e040fb;
+      --accent-glow:    rgba(224, 64, 251, 0.35);
+      --accent-2:       #7c4dff;
+      --live-red:       #ff1744;
+      --live-pulse:     rgba(255, 23, 68, 0.6);
+      --text-primary:   #f0f0f8;
+      --text-secondary: #9090b0;
+      --text-muted:     #555570;
+      --border:         rgba(255,255,255,0.07);
+      --border-accent:  rgba(224, 64, 251, 0.3);
+      --radius:         12px;
+      --radius-sm:      8px;
+      --shadow-card:    0 4px 24px rgba(0,0,0,0.5);
+      --shadow-glow:    0 0 30px rgba(224,64,251,0.2);
+      --font-body:      'Inter', sans-serif;
+      --font-heading:   'Poppins', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===========================
+       SCROLLBAR
+    =========================== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ===========================
+       LAYOUT
+    =========================== */
+    #outer-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ===========================
+       HEADER
+    =========================== */
+    #header-wrapper {
+      background: linear-gradient(180deg, #0d0d16 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    #header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    #header h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    #header h1 a {
+      background: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #header .description {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,23,68,0.15);
+      border: 1px solid rgba(255,23,68,0.3);
+      color: var(--live-red);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .header-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--live-red);
+      border-radius: 50%;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { box-shadow: 0 0 0 0 var(--live-pulse); opacity: 1; }
+      50%       { box-shadow: 0 0 0 6px transparent; opacity: 0.7; }
+    }
+
+    /* ===========================
+       NAVIGATION
+    =========================== */
+    #navbar-wrapper {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    #navbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .navbar-item a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .navbar-item a:hover,
+    .navbar-item.active a {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ===========================
+       HERO SECTION
+    =========================== */
+    #hero {
+      padding: 64px 20px 48px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124,77,255,0.12) 0%, transparent 70%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    #hero h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    #hero h2 span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #hero p {
+      max-width: 540px;
+      margin: 0 auto 32px;
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 30px;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .cta-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+
+    /* ===========================
+       STATS BAR
+    =========================== */
+    #stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 28px 20px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-item .stat-number {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .stat-item .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 2px;
+    }
+
+    /* ===========================
+       SECTION HEADING
+    =========================== */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 20px 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-head h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-head h3 .badge {
+      background: var(--live-red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.8px;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+
+    .section-head a.view-all {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+
+    .section-head a.view-all:hover { gap: 8px; }
+
+    /* ===========================
+       PERFORMER GRID (API)
+    =========================== */
+    #api-grid-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px 48px;
+    }
+
+    #performers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .performer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(.22,.68,0,1.2),
+                  border-color 0.25s,
+                  box-shadow 0.25s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .performer-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .performer-card .thumb-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+
+    .performer-card .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .performer-card:hover .thumb-wrap img { transform: scale(1.06); }
+
+    .performer-card .live-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--live-red);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .performer-card .live-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+      animation: livePulse 1.2s ease-in-out infinite;
+    }
+
+    .performer-card .viewers {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      color: var(--text-primary);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .performer-card .hd-tag {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .performer-card .card-body { padding: 12px 14px 14px; }
+
+    .performer-card .card-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .performer-card .card-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .performer-card .card-meta span { display: flex; align-items: center; gap: 3px; }
+
+    .performer-card .card-topic {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 12px;
+      min-height: 30px;
+    }
+
+    .performer-card .card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 9px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .performer-card .card-btn:hover {
+      opacity: 0.9;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    /* Skeleton loaders */
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: var(--radius);
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .skeleton-thumb.skeleton { height: 160px; }
+    .skeleton-line { height: 12px; border-radius: 4px; margin: 8px 14px; }
+    .skeleton-line.skeleton { width: 70%; }
+    .skeleton-line.short.skeleton { width: 40%; margin-bottom: 14px; }
+
+    /* Load more */
+    #load-more-wrap {
+      text-align: center;
+      padding: 24px 0 48px;
+    }
+
+    #load-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 32px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    #load-more-btn:hover {
+      background: rgba(224,64,251,0.08);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    /* ===========================
+       CONTENT + SIDEBAR
+    =========================== */
+    #content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 900px) {
+      #content-wrapper { grid-template-columns: 1fr; }
+    }
+
+    /* ===========================
+       BLOG POSTS
+    =========================== */
+    #blog-wrapper { flex: 1; }
+
+    .post-outer {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .post-outer:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .post { padding: 28px 32px; }
+
+    .post-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .post-title a { color: var(--text-primary); transition: color 0.2s; }
+    .post-title a:hover { color: var(--accent); }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .post-labels a {
+      display: inline-block;
+      background: rgba(224,64,251,0.12);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .post-labels a:hover { background: rgba(224,64,251,0.22); }
+
+    .post-timestamp {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .post-body {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .post-body img { border-radius: var(--radius-sm); margin: 16px 0; }
+
+    .post-body h1, .post-body h2, .post-body h3, .post-body h4 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      margin: 20px 0 10px;
+    }
+
+    .post-body a { color: var(--accent); text-decoration: underline; }
+    .post-body a:hover { opacity: 0.8; }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 20px 0;
+      background: rgba(224,64,251,0.05);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: var(--text-secondary);
+    }
+
+    .post-footer {
+      padding: 16px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .post-footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-right: 16px;
+      transition: color 0.2s;
+    }
+
+    .post-footer-links a:hover { color: var(--accent); }
+
+    /* ===========================
+       SIDEBAR
+    =========================== */
+    #sidebar-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .sidebar-widget h2 {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-widget ul { list-style: none; }
+
+    .sidebar-widget ul li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-widget ul li:last-child { border-bottom: none; }
+
+    .sidebar-widget ul li a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar-widget ul li a:hover { color: var(--accent); }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, rgba(224,64,251,0.15) 0%, rgba(124,77,255,0.15) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .sidebar-cta h3 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-cta p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 24px;
+      border-radius: 20px;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+
+    .sidebar-cta a:hover {
+      opacity: 0.9;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    .searchBox input {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      font-size: 13px;
+      width: 100%;
+      outline: none;
+      font-family: var(--font-body);
+      transition: border-color 0.2s;
+    }
+
+    .searchBox input:focus { border-color: var(--accent); }
+    .searchBox input::placeholder { color: var(--text-muted); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    #footer-wrapper {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 48px 20px 24px;
+    }
+
+    #footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 13px; color: var(--text-secondary); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 12px; color: var(--text-muted); }
+    .footer-bottom a { color: var(--accent); }
+
+    .age-disclaimer {
+      background: rgba(255,23,68,0.08);
+      border: 1px solid rgba(255,23,68,0.2);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    /* ===========================
+       BACK TO TOP
+    =========================== */
+    #back-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      z-index: 99;
+      border: none;
+    }
+
+    #back-top.visible { opacity: 1; visibility: visible; }
+    #back-top:hover { transform: translateY(-3px); }
+    #back-top svg { fill: #fff; width: 18px; height: 18px; }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 640px) {
+      #performers-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .section-head { padding: 28px 16px 16px; }
+      #api-grid-wrapper { padding: 0 16px 32px; }
+      .post { padding: 20px; }
+      .post-footer { padding: 12px 20px; }
+    }
+
+    @media (max-width: 400px) {
+      #performers-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Back to top -->
+<button id="back-top" aria-label="Back to top" onclick="scrollToTop()">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<div id="outer-wrapper">
+
+  <!-- ====== HEADER ====== -->
+  <div id="header-wrapper">
+    <div id="header-inner">
+      <div id="header">
+        <h1><a href="/">Live Cam Entertainment</a></h1>
+        <p class="description">Watch live performers streaming right now</p>
+      </div>
+      <div class="header-badge">Live Now</div>
+    </div>
+  </div>
+
+  <!-- ====== NAVBAR ====== -->
+  <div id="navbar-wrapper">
+    <div id="navbar-inner">
+      <span class="navbar-item active"><a href="/">Home</a></span>
+      <span class="navbar-item"><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">Female</a></span>
+      <span class="navbar-item"><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">Couples</a></span>
+      <span class="navbar-item"><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">Male</a></span>
+      <span class="navbar-item"><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">Popular</a></span>
+      <span class="navbar-item"><a href="/p/contact.html">Contact</a></span>
+    </div>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <div id="hero">
+    <h2>Discover <span>Live Performers</span><br>Streaming Right Now</h2>
+    <p>Browse thousands of live models across all categories. HD streams, real-time interaction, exclusive shows.</p>
+    <a class="cta-btn" href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">
+      ▶ Browse All Live Cams
+    </a>
+  </div>
+
+  <!-- ====== STATS BAR ====== -->
+  <div id="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number" id="stat-online">—</span>
+      <span class="stat-label">Viewers Online</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">1,200+</span>
+      <span class="stat-label">HD Streams</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Free</span>
+      <span class="stat-label">To Watch</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">24/7</span>
+      <span class="stat-label">Always Live</span>
+    </div>
+  </div>
+
+  <!-- ====== LIVE PERFORMERS (API) ====== -->
+  <div class="section-head">
+    <h3>🔴 Featured Live Now <span class="badge">LIVE</span></h3>
+    <a class="view-all" href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">
+      View All →
+    </a>
+  </div>
+
+  <div id="api-grid-wrapper">
+    <div id="performers-grid">
+      <div class="skeleton-card" id="skel1"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel2"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel3"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel4"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel5"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel6"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel7"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel8"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel9"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+      <div class="skeleton-card" id="skel10"><div class="skeleton-thumb skeleton"></div><div class="skeleton-line skeleton"></div><div class="skeleton-line short skeleton"></div></div>
+    </div>
+  </div>
+
+  <div id="load-more-wrap">
+    <button id="load-more-btn" onclick="loadMorePerformers()">Load More Performers</button>
+  </div>
+
+  <!-- ====== MAIN CONTENT + SIDEBAR ====== -->
+  <div id="content-wrapper">
+
+    <!-- Blog Posts placeholder -->
+    <div id="blog-wrapper">
+      <div class="post-outer">
+        <div class="post">
+          <div class="post-header">
+            <div class="post-labels"><a href="#">Live Cams</a></div>
+            <span class="post-timestamp">May 17, 2026</span>
+          </div>
+          <h2 class="post-title"><a href="#">Welcome to Live Cam Entertainment</a></h2>
+          <div class="post-body">
+            <p>Discover the best live streaming experience with thousands of performers online right now. Browse by category, filter by your preferences, and enjoy HD quality streams completely free.</p>
+            <p>Our platform updates in real-time, so you always see who is live at this exact moment. Click any performer card above to open their stream instantly.</p>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-footer-links">
+            <a href="#">Read More →</a>
+            <a href="#">0 Comments</a>
+          </div>
+          <span style="font-size:12px;color:var(--text-muted);">Admin</span>
+        </div>
+      </div>
+
+      <div class="post-outer">
+        <div class="post">
+          <div class="post-header">
+            <div class="post-labels"><a href="#">Guide</a></div>
+            <span class="post-timestamp">May 16, 2026</span>
+          </div>
+          <h2 class="post-title"><a href="#">How to Get the Most Out of Live Streams</a></h2>
+          <div class="post-body">
+            <p>Getting started is simple — no account needed to watch. Simply click on any live performer card to open their stream in a new tab. For interactive features like private shows or tipping, you can create a free account in seconds.</p>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-footer-links">
+            <a href="#">Read More →</a>
+          </div>
+          <span style="font-size:12px;color:var(--text-muted);">Admin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+      <div class="sidebar-cta">
+        <h3>🔴 Join Free Today</h3>
+        <p>Watch unlimited live HD streams. No credit card required to get started.</p>
+        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/signup" rel="nofollow noopener" target="_blank">
+          Create Free Account
+        </a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">🔴 Female Live</a></li>
+          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">💑 Couples</a></li>
+          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">👨 Male Cams</a></li>
+          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">⭐ Popular Now</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="#">HD Streams <span style="color:var(--text-muted);font-size:11px;">(1,200+)</span></a></li>
+          <li><a href="#">New Models <span style="color:var(--text-muted);font-size:11px;">(340)</span></a></li>
+          <li><a href="#">Popular Now <span style="color:var(--text-muted);font-size:11px;">(520)</span></a></li>
+          <li><a href="#">Private Shows <span style="color:var(--text-muted);font-size:11px;">(89)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h2>Search</h2>
+        <div class="searchBox">
+          <input type="text" placeholder="Search performers..." />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <div id="footer-wrapper">
+    <div id="footer-inner">
+
+      <div class="age-disclaimer">
+        ⚠️ <strong>Adult Content Warning:</strong> This site contains links to adult content. You must be 18 years of age or older to proceed. By continuing, you confirm that you are an adult and agree to the Terms of Service. This site uses affiliate partnerships with third-party providers.
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Live Cam Entertainment</h3>
+          <p>Discover the best live streaming entertainment. Updated in real-time with the latest online performers and exclusive shows.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <ul>
+            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">Female Cams</a></li>
+            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">Couples</a></li>
+            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">Male Cams</a></li>
+            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">Popular Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="/p/contact.html">Contact</a></li>
+            <li><a href="/p/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/p/terms.html">Terms of Use</a></li>
+            <li><a href="/p/dmca.html">DMCA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Live Cam Entertainment. All rights reserved. 18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement.</p>
+        <p>Affiliate disclosure: This site may earn commissions from links.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /outer-wrapper -->
+
+<!-- ====================================================
+     JAVASCRIPT: API Fetching + Rendering
+===================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  var API_BASE   = 'https://bngprm.com/promo.php';
+  var API_PARAMS = 'c=18145&type=api&api_v=1&api_type=json';
+  var PAGE_SIZE  = 10;
+  var currentOffset = 0;
+  var SKEL_COUNT = 10;
+
+  // Footer year
+  var fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = new Date().getFullYear();
+
+  // Back to top
+  var backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', function () {
+    if (!backTop) return;
+    if (window.scrollY > 300) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
+  }, { passive: true });
+
+  window.scrollToTop = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Utilities
+  function formatViewers(n) {
+    if (!n && n !== 0) return '';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+    return n.toString();
+  }
+
+  function truncate(str, max) {
+    if (!str) return '';
+    return str.length > max ? str.slice(0, max) + '\u2026' : str;
+  }
+
+  function sanitize(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Build a performer card
+  function buildCard(p) {
+    var img = (p.profile_images && p.profile_images.thumbnail_image_medium_live)
+           || (p.profile_images && p.profile_images.thumbnail_image_medium)
+           || '';
+    if (img && img.startsWith('//')) img = 'https:' + img;
+
+    var name    = sanitize(p.display_name || p.username || '');
+    var age     = p.display_age ? sanitize(String(p.display_age)) : '';
+    var viewers = formatViewers(p.members_count);
+    var topic   = truncate(p.chat_topic || '', 80);
+    var chatUrl = sanitize(p.chat_url_on_home_page || p.chat_url || '#');
+    var isHD    = p.hd_cam;
+
+    return '<div class="performer-card" onclick="window.open(\'' + chatUrl + '\',\'_blank\')">'
+      + '<div class="thumb-wrap">'
+      + '<span class="live-badge">LIVE</span>'
+      + (viewers ? '<span class="viewers">\uD83D\uDC41 ' + sanitize(viewers) + '</span>' : '')
+      + (isHD ? '<span class="hd-tag">HD</span>' : '')
+      + (img
+          ? '<img alt="' + name + ' live cam" loading="lazy" src="' + sanitize(img) + '">'
+          : '<div style="height:100%;background:var(--bg-card-hover);"></div>')
+      + '</div>'
+      + '<div class="card-body">'
+      + '<div class="card-name">' + name + '</div>'
+      + '<div class="card-meta">'
+      + (age ? '<span>\uD83C\uDF82 ' + age + '</span>' : '')
+      + '</div>'
+      + '<div class="card-topic">' + sanitize(topic) + '</div>'
+      + '<a class="card-btn" href="' + chatUrl + '" rel="nofollow noopener" target="_blank">'
+      + '\u25B6 Watch Live'
+      + '</a>'
+      + '</div>'
+      + '</div>';
+  }
+
+  // Remove skeleton placeholders
+  function clearSkeletons() {
+    for (var i = 1; i <= SKEL_COUNT; i++) {
+      var el = document.getElementById('skel' + i);
+      if (el) el.parentNode.removeChild(el);
+    }
+  }
+
+  // Fetch and render performers
+  function fetchPerformers(offset, limit, append) {
+    var url  = API_BASE + '?' + API_PARAMS + '&limit=' + limit + '&offset=' + offset;
+    var grid = document.getElementById('performers-grid');
+    if (!grid) return;
+
+    fetch(url, { mode: 'cors' })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!append) clearSkeletons();
+
+        if (Array.isArray(data) && data.length > 0) {
+          // Update viewer count stat
+          var statEl = document.getElementById('stat-online');
+          if (statEl) {
+            var total = data.reduce(function (sum, p) { return sum + (p.members_count || 0); }, 0);
+            statEl.textContent = total.toLocaleString() + '+';
+          }
+
+          var html = '';
+          data.forEach(function (p) { html += buildCard(p); });
+
+          if (append) {
+            grid.insertAdjacentHTML('beforeend', html);
+          } else {
+            grid.innerHTML = html;
+          }
+        } else if (!append) {
+          grid.innerHTML = '<p style="color:var(--text-muted);padding:24px;text-align:center;grid-column:1/-1;">No performers online at the moment. Check back soon.</p>';
+        }
+      })
+      .catch(function () {
+        if (!append) {
+          clearSkeletons();
+          grid.innerHTML = '<p style="color:var(--text-muted);padding:24px;text-align:center;grid-column:1/-1;">Unable to load performers. Please refresh the page.</p>';
+        }
+      });
+  }
+
+  // Load more
+  window.loadMorePerformers = function () {
+    currentOffset += PAGE_SIZE;
+    fetchPerformers(currentOffset, PAGE_SIZE, true);
+  };
+
+  // Initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      fetchPerformers(0, PAGE_SIZE, false);
+    });
+  } else {
+    fetchPerformers(0, PAGE_SIZE, false);
+  }
+
+})();
+</script>
+
+<!-- JSON-LD Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Live Cam Entertainment",
+  "url": "https://yoursite.blogspot.com/",
+  "description": "Watch live streaming performers 24/7. Browse thousands of HD cam shows updated in real-time.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://yoursite.blogspot.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+</body>
+</html>
