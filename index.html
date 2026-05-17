@@ -817,19 +817,31 @@
     }
   }
 
+  // Fetch with automatic retry
+  function fetchWithRetry(url, attempts, delay) {
+    return fetch(url)
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .catch(function (err) {
+        if (attempts <= 1) throw err;
+        return new Promise(function (resolve) { setTimeout(resolve, delay); })
+          .then(function () { return fetchWithRetry(url, attempts - 1, delay * 2); });
+      });
+  }
+
   // Fetch and render performers
   function fetchPerformers(offset, limit, append) {
     var url = API_ORIGIN + '?limit=' + limit + '&offset=' + offset;
-    var grid   = document.getElementById('performers-grid');
+    var grid = document.getElementById('performers-grid');
     if (!grid) return;
 
-    fetch(url)
-      .then(function (r) { return r.json(); })
+    fetchWithRetry(url, 3, 1000)
       .then(function (data) {
         if (!append) clearSkeletons();
 
         if (Array.isArray(data) && data.length > 0) {
-          // Update viewer count stat
           var statEl = document.getElementById('stat-online');
           if (statEl) {
             var total = data.reduce(function (sum, p) { return sum + (p.members_count || 0); }, 0);
