@@ -1124,11 +1124,12 @@
 (function () {
   'use strict';
 
-  var API_BASE   = 'https://bngprm.com/promo.php';
-  var API_PARAMS = 'c=18145&type=api&api_v=1&api_type=json';
-  var PAGE_SIZE  = 10;
+  var CORS_PROXY  = 'https://api.codetabs.com/v1/proxy?quest=';
+  var API_ORIGIN  = 'https://bngprm.com/promo.php';
+  var API_PARAMS  = 'c=18145&type=api&api_v=1&api_type=json';
+  var PAGE_SIZE   = 10;
   var currentOffset = 0;
-  var SKEL_COUNT = 10;
+  var SKEL_COUNT  = 10;
 
   // Footer year
   var fy = document.getElementById('footer-year');
@@ -1213,11 +1214,12 @@
 
   // Fetch and render performers
   function fetchPerformers(offset, limit, append) {
-    var url  = API_BASE + '?' + API_PARAMS + '&limit=' + limit + '&offset=' + offset;
-    var grid = document.getElementById('performers-grid');
+    var target = API_ORIGIN + '?' + API_PARAMS + '&limit=' + limit + '&offset=' + offset;
+    var url    = CORS_PROXY + encodeURIComponent(target);
+    var grid   = document.getElementById('performers-grid');
     if (!grid) return;
 
-    fetch(url, { mode: 'cors' })
+    fetch(url)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (!append) clearSkeletons();
