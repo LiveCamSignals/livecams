@@ -8,6 +8,7 @@
   <meta name="keywords" content="live cams, HD streams, adult cams, female cams, couple cams, bongacams, live performers">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://yoursite.blogspot.com/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23e8175d'/><circle cx='16' cy='16' r='6' fill='%23fff'/></svg>">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Live Cam Entertainment – HD Cams Online 24/7">
@@ -850,7 +851,10 @@
       .catch(function () {
         if (!append) {
           clearSkeletons();
-          grid.innerHTML = '<p style="color:var(--text-muted);padding:24px;text-align:center;grid-column:1/-1;">Unable to load performers. Please refresh the page.</p>';
+          grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px 24px;">'
+            + '<p style="color:var(--text-muted);margin-bottom:16px;">Could not reach the live feed. Check your connection.</p>'
+            + '<button onclick="retryLoad()" style="background:var(--accent);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">↻ Retry</button>'
+            + '</div>';
         }
       });
   }
@@ -859,6 +863,19 @@
   window.loadMorePerformers = function () {
     currentOffset += PAGE_SIZE;
     fetchPerformers(currentOffset, PAGE_SIZE, true);
+  };
+
+  // Retry from scratch
+  window.retryLoad = function () {
+    currentOffset = 0;
+    var grid = document.getElementById('performers-grid');
+    if (grid) {
+      grid.innerHTML = '';
+      for (var i = 1; i <= SKEL_COUNT; i++) {
+        grid.innerHTML += '<div class="skel-card" id="skel' + i + '"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>';
+      }
+    }
+    fetchPerformers(0, PAGE_SIZE, false);
   };
 
   // Initial load
