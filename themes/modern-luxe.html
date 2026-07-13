@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveCams — Modern Luxe Theme</title>
+  <meta name="description" content="Watch live cam rooms streaming now. Thousands of live performers online — filter by name or tag." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="LiveCams — Watch Live Now" />
+  <meta property="og:description" content="Thousands of live rooms streaming right now." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="LiveCams — Modern Luxe" />
+  <meta name="twitter:description" content="Thousands of live rooms streaming right now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0b0b0f;
+      --bg-card:       #13131a;
+      --bg-input:      #181820;
+      --border:        #1e1e2e;
+      --border-hover:  #2c2c49;
+      --text-primary:  #e9e9ec;
+      --text-secondary:#858599;
+      --text-muted:    #555563;
+      --tag-bg:        #1c1c26;
+      --tag-text:      #9f9fb2;
+      --live-dot:      #404096;
+      --accent:        #404096;
+      --radius:        10px;
+      --radius-sm:     6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px; height: 58px;
+      display: flex; align-items: center; gap: 20px;
+    }
+
+    .logo {
+      font-size: 17px; font-weight: 600; letter-spacing: -0.3px;
+      color: var(--text-primary); text-decoration: none;
+      white-space: nowrap; display: flex; align-items: center; gap: 7px;
+    }
+
+    .logo-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--live-dot);
+      animation: pulse 2s ease-in-out infinite; flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .55; transform: scale(.85); }
+    }
+
+    .logo-theme {
+      font-size: 11px; font-weight: 400;
+      color: var(--text-muted); letter-spacing: .4px;
+      text-transform: uppercase; margin-left: 2px;
+    }
+
+    .search-wrap { flex: 1; max-width: 460px; position: relative; }
+
+    .search-icon {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: var(--text-muted); pointer-events: none; display: flex;
+    }
+
+    #search {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 8px 14px 8px 36px;
+      color: var(--text-primary);
+      font-family: inherit; font-size: 13.5px; outline: none;
+      transition: border-color .18s, background .18s;
+    }
+    #search::placeholder { color: var(--text-muted); }
+    #search:focus { border-color: var(--border-hover); background: color-mix(in srgb, var(--bg-input) 80%, var(--accent) 5%); }
+
+    .header-meta { margin-left: auto; color: var(--text-muted); font-size: 12.5px; white-space: nowrap; }
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    main { max-width: 1400px; margin: 0 auto; padding: 28px 20px 60px; }
+
+    .status-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; min-height: 24px; }
+
+    .status-count { font-size: 13px; color: var(--text-muted); }
+    .status-count strong { color: var(--text-secondary); }
+
+    /* ── GRID ───────────────────────────────────────── */
+    #grid { columns: 5 200px; column-gap: 14px; }
+    @media (max-width: 900px) { #grid { columns: 3 160px; } }
+    @media (max-width: 560px) { #grid { columns: 2 140px; } }
+
+    /* ── CARD ───────────────────────────────────────── */
+    .card {
+      break-inside: avoid; display: block; margin-bottom: 14px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: border-color .18s, transform .18s, box-shadow .18s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+
+    .card-thumb {
+      position: relative; width: 100%; aspect-ratio: 4/3;
+      background: color-mix(in srgb, var(--bg-card) 70%, var(--bg));
+      overflow: hidden;
+    }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+    .card:hover .card-thumb img { transform: scale(1.03); }
+
+    .card-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
+
+    .badge-live {
+      position: absolute; top: 8px; left: 8px;
+      background: var(--live-dot); color: #fff;
+      font-size: 10px; font-weight: 600; letter-spacing: .5px;
+      padding: 3px 7px; border-radius: 4px; text-transform: uppercase;
+    }
+
+    .badge-viewers {
+      position: absolute; bottom: 8px; right: 8px;
+      background: rgba(0,0,0,.72); backdrop-filter: blur(4px);
+      color: var(--text-secondary); font-size: 11.5px;
+      padding: 3px 8px; border-radius: 4px;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    .card-body { padding: 10px 11px 11px; }
+
+    .card-name {
+      font-size: 13.5px; font-weight: 500; color: var(--text-primary);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px;
+    }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .tag {
+      background: var(--tag-bg); color: var(--tag-text);
+      font-size: 10.5px; padding: 2px 7px; border-radius: 4px;
+      border: 1px solid var(--border); white-space: nowrap;
+      max-width: 90px; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* ── STATES ─────────────────────────────────────── */
+    #state-loading, #state-empty, #state-error {
+      display: none; flex-direction: column; align-items: center;
+      justify-content: center; padding: 80px 20px;
+      color: var(--text-muted); gap: 14px; text-align: center;
+    }
+    #state-loading.visible, #state-empty.visible, #state-error.visible { display: flex; }
+
+    .spinner {
+      width: 32px; height: 32px;
+      border: 2.5px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%; animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .state-icon { font-size: 28px; opacity: .4; }
+
+    /* ── PAGINATION ─────────────────────────────────── */
+    #pagination { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 40px; }
+
+    .page-btn {
+      background: var(--bg-input); border: 1px solid var(--border);
+      color: var(--text-secondary); font-family: inherit; font-size: 13px;
+      padding: 7px 16px; border-radius: var(--radius-sm); cursor: pointer;
+      transition: border-color .15s, color .15s, background .15s;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--text-primary); }
+    .page-btn:disabled { opacity: .3; cursor: default; }
+
+    .page-info { font-size: 13px; color: var(--text-muted); min-width: 90px; text-align: center; }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px; text-align: center;
+      color: var(--text-muted); font-size: 12px; line-height: 1.8;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--text-secondary); }
+
+    /* ── ACCESSIBILITY ──────────────────────────────── */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">
+    <span class="logo-dot"></span>
+    LiveCams
+    <span class="logo-theme">Modern Luxe</span>
+  </a>
+  <div class="search-wrap">
+    <label for="search" class="sr-only">Search rooms by name or tag</label>
+    <span class="search-icon" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </span>
+    <input id="search" type="search" placeholder="Search by name or tag…" autocomplete="off" spellcheck="false" />
+  </div>
+  <div class="header-meta" id="header-meta"></div>
+</header>
+
+<main>
+  <div class="status-bar">
+    <div class="status-count" id="status-count" aria-live="polite"></div>
+  </div>
+
+  <div id="state-loading">
+    <div class="spinner"></div>
+    <span>Loading rooms…</span>
+  </div>
+  <div id="state-empty">
+    <div class="state-icon">◎</div>
+    <span>No rooms match your search.</span>
+  </div>
+  <div id="state-error">
+    <div class="state-icon">⚠</div>
+    <span id="error-msg">Failed to load rooms. Please try again.</span>
+    <button class="page-btn" onclick="init()">Retry</button>
+  </div>
+
+  <div id="grid"></div>
+
+  <div id="pagination">
+    <button class="page-btn" id="btn-prev" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Prev
+    </button>
+    <span class="page-info" id="page-info"></span>
+    <button class="page-btn" id="btn-next" disabled>
+      Next
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</main>
+
+<footer>
+  <p>All performers are consenting adults 18+. &nbsp;·&nbsp;
+    <a href="https://chaturbate.com/terms/" target="_blank" rel="noopener">Terms</a> &nbsp;·&nbsp;
+    <a href="https://chaturbate.com/privacy/" target="_blank" rel="noopener">Privacy</a>
+  </p>
+  <p class="site-links">
+    <a href="https://livecamsignals.github.io/livecams/">LiveCams Home</a> &nbsp;·&nbsp;
+    <a href="https://livecamsignals.github.io/livecams/themes.html">All 208 Themes</a> &nbsp;·&nbsp;
+    <a href="https://livecamsignals.github.io/fuzzy-bassoon/">Browse by Country &amp; Tag</a>
+  </p>
+</footer>
+
+<script>
+  const API_URL  = 'https://chaturbate.com/api/public/affiliates/onlinerooms/?wm=T2CSW&client_ip=request_ip&limit=500';
+  const REVSHARE = (room) => `https://chaturbate.com/in/?tour=APi5&campaign=T2CSW&track=default&room=${room}`;
+  const PER_PAGE = 40;
+
+  let allRooms = [], filtered = [], currentPage = 1, searchQuery = '';
+
+  const $grid    = document.getElementById('grid');
+  const $search  = document.getElementById('search');
+  const $loading = document.getElementById('state-loading');
+  const $empty   = document.getElementById('state-empty');
+  const $error   = document.getElementById('state-error');
+  const $errMsg  = document.getElementById('error-msg');
+  const $count   = document.getElementById('status-count');
+  const $meta    = document.getElementById('header-meta');
+  const $prev    = document.getElementById('btn-prev');
+  const $next    = document.getElementById('btn-next');
+  const $pageInfo= document.getElementById('page-info');
+
+  async function init() {
+    showState('loading');
+    try {
+      const res  = await fetch(API_URL);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      allRooms   = Array.isArray(data.results) ? data.results : [];
+      if (!allRooms.length) throw new Error('No rooms returned.');
+      $meta.textContent = allRooms.length.toLocaleString() + ' online';
+      applyFilter();
+      showState('grid');
+    } catch (err) {
+      $errMsg.textContent = 'Failed to load rooms: ' + err.message;
+      showState('error');
+    }
+  }
+
+  function applyFilter() {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) {
+      filtered = [...allRooms];
+    } else {
+      filtered = allRooms.filter(r => {
+        if (!r || typeof r.username !== 'string') return false;
+        const inName = r.username.toLowerCase().includes(q);
+        const inTags = Array.isArray(r.tags) && r.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(q));
+        const inSubj = typeof r.subject === 'string' && r.subject.toLowerCase().includes(q);
+        return inName || inTags || inSubj;
+      });
+    }
+    currentPage = 1;
+    render();
+  }
+
+  function render() {
+    $grid.innerHTML = '';
+    if (!filtered.length) { showState('empty'); updatePagination(0); return; }
+    showState('grid');
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * PER_PAGE;
+    const slice = filtered.slice(start, start + PER_PAGE);
+    const from  = start + 1, to = Math.min(start + PER_PAGE, filtered.length);
+    $count.innerHTML = (filtered.length < allRooms.length
+      ? '<strong>' + filtered.length.toLocaleString() + '</strong> results'
+      : '<strong>' + filtered.length.toLocaleString() + '</strong> rooms live')
+      + ' — showing ' + from + '–' + to;
+    const frag = document.createDocumentFragment();
+    slice.forEach(r => frag.appendChild(buildCard(r)));
+    $grid.appendChild(frag);
+    updatePagination(totalPages);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function buildCard(room) {
+    const username = typeof room.username === 'string' ? room.username : String(room.username || '');
+    const viewers  = Math.max(0, parseInt(room.num_users, 10) || 0).toLocaleString();
+    const tags     = Array.isArray(room.tags) ? room.tags.slice(0,4).map(t => String(t||'').trim()).filter(Boolean) : [];
+    const imgSrc   = typeof room.image_url_360x270 === 'string' ? room.image_url_360x270
+                   : typeof room.image_url         === 'string' ? room.image_url : '';
+
+    const a = document.createElement('a');
+    a.className = 'card';
+    a.href      = REVSHARE(encodeURIComponent(username));
+    a.target    = '_blank';
+    a.rel       = 'noopener noreferrer';
+    a.setAttribute('aria-label', username);
+
+    const thumb = document.createElement('div');
+    thumb.className = 'card-thumb';
+
+    if (imgSrc) {
+      const img = document.createElement('img');
+      img.src = imgSrc; img.alt = username; img.loading = 'lazy'; img.decoding = 'async';
+      thumb.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'card-thumb-placeholder';
+      ph.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".3"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>';
+      thumb.appendChild(ph);
+    }
+
+    const bl = document.createElement('span'); bl.className = 'badge-live'; bl.textContent = 'Live';
+    const bv = document.createElement('span'); bv.className = 'badge-viewers';
+    bv.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
+    bv.appendChild(document.createTextNode(' ' + viewers));
+    thumb.appendChild(bl); thumb.appendChild(bv);
+    a.appendChild(thumb);
+
+    const body = document.createElement('div'); body.className = 'card-body';
+    const nameEl = document.createElement('div'); nameEl.className = 'card-name'; nameEl.textContent = username;
+    body.appendChild(nameEl);
+    if (tags.length) {
+      const tw = document.createElement('div'); tw.className = 'card-tags';
+      tags.forEach(t => { const sp = document.createElement('span'); sp.className = 'tag'; sp.textContent = t; tw.appendChild(sp); });
+      body.appendChild(tw);
+    }
+    a.appendChild(body);
+    return a;
+  }
+
+  function updatePagination(totalPages) {
+    $prev.disabled = currentPage <= 1;
+    $next.disabled = currentPage >= totalPages;
+    $pageInfo.textContent = totalPages > 0 ? 'Page ' + currentPage + ' / ' + totalPages : '';
+    document.getElementById('pagination').style.display = totalPages > 1 ? 'flex' : 'none';
+  }
+
+  $prev.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
+  $next.addEventListener('click', () => {
+    const tp = Math.ceil(filtered.length / PER_PAGE);
+    if (currentPage < tp) { currentPage++; render(); }
+  });
+
+  let searchTimer;
+  $search.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { searchQuery = $search.value; applyFilter(); }, 260);
+  });
+
+  function showState(state) {
+    $loading.classList.toggle('visible', state === 'loading');
+    $empty.classList.toggle('visible',   state === 'empty');
+    $error.classList.toggle('visible',   state === 'error');
+    $grid.style.display = state === 'grid' ? '' : 'none';
+  }
+
+  init();
+</script>
+</body>
+</html>
