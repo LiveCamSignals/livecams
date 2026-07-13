@@ -1,771 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Cam Entertainment – Watch HD Cams Online 24/7</title>
-  <meta name="description" content="Stream thousands of live HD cam performers 24/7. Browse female, male, and couple cam shows. Free to watch – no sign-up required to browse.">
-  <meta name="keywords" content="live cams, HD streams, adult cams, female cams, couple cams, bongacams, live performers">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yoursite.blogspot.com/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23e8175d'/><circle cx='16' cy='16' r='6' fill='%23fff'/></svg>">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Live Cam Entertainment – HD Cams Online 24/7">
-  <meta property="og:description" content="Browse thousands of live HD cam performers. Updated in real-time. Free to watch.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yoursite.blogspot.com/">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Live Cam Entertainment – HD Cams Online 24/7">
-  <meta name="twitter:description" content="Browse thousands of live HD cam performers. Updated in real-time.">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveCams — Watch Live Now</title>
+  <meta name="description" content="Watch live cam rooms streaming now. Thousands of live performers online — filter by name or tag." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="LiveCams — Watch Live Now" />
+  <meta property="og:description" content="Thousands of live rooms streaming right now." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="LiveCams — Watch Live Now" />
+  <meta name="twitter:description" content="Thousands of live rooms streaming right now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* =============================================
-       RESET & BASE
-    ============================================= */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --bg-page:        #0d0d0f;
-      --bg-card:        #18181c;
-      --bg-card-hover:  #222228;
-      --bg-header:      #111115;
-      --bg-sidebar:     #14141a;
-      --accent:         #e8175d;
-      --accent-hover:   #c7124f;
-      --accent-glow:    rgba(232,23,93,0.25);
-      --text-primary:   #f0f0f4;
-      --text-secondary: #b0b0be;
-      --text-muted:     #6c6c80;
-      --border:         #2a2a36;
-      --live-green:     #22c55e;
-      --gold:           #f59e0b;
-      --font:           -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --radius:         10px;
-      --shadow:         0 4px 24px rgba(0,0,0,0.5);
+      --bg:       #0c0c0c;
+      --bg-card:  #141414;
+      --bg-input: #1a1a1a;
+      --border:   #242424;
+      --border-hover: #383838;
+      --text-primary:   #f0f0f0;
+      --text-secondary: #888;
+      --text-muted:     #555;
+      --tag-bg:   #1f1f1f;
+      --tag-text: #aaa;
+      --live-dot: #e5383b;
+      --radius:   10px;
+      --radius-sm: 6px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font);
-      background: var(--bg-page);
+      background: var(--bg);
       color: var(--text-primary);
-      line-height: 1.6;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
       min-height: 100vh;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { display: block; max-width: 100%; }
-    ul { list-style: none; }
-
-    /* =============================================
-       OUTER WRAPPER
-    ============================================= */
-    #outer-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* =============================================
-       HEADER
-    ============================================= */
-    #header-wrapper {
-      background: var(--bg-header);
-      border-bottom: 1px solid var(--border);
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
-    }
-
-    #header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
+      background: rgba(12, 12, 12, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
       padding: 0 20px;
+      height: 58px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 60px;
-      gap: 16px;
+      gap: 20px;
     }
 
-    .site-logo {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-primary);
-      white-space: nowrap;
-      text-decoration: none;
-    }
-    .site-logo span { color: var(--accent); }
-    .site-logo:hover { text-decoration: none; }
-
-    .header-nav { display: flex; gap: 6px; flex-wrap: wrap; }
-
-    .header-nav a {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-    .header-nav a:hover {
-      color: var(--text-primary);
-      border-color: var(--border);
-      background: var(--bg-card);
-      text-decoration: none;
-    }
-    .header-nav a.active {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: var(--accent-glow);
-    }
-
-    .header-cta {
-      background: var(--accent);
-      color: #fff !important;
+    .logo {
+      font-size: 17px;
       font-weight: 600;
-      border-radius: 6px;
-      padding: 8px 18px !important;
-      transition: background 0.2s !important;
-      border: none !important;
-    }
-    .header-cta:hover { background: var(--accent-hover) !important; text-decoration: none; }
-
-    /* =============================================
-       HERO
-    ============================================= */
-    #hero {
-      background: linear-gradient(135deg, #0d0d0f 0%, #1a0a14 50%, #0d0d0f 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    #hero h1 {
-      font-size: clamp(24px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    #hero h1 span { color: var(--accent); }
-
-    #hero p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 560px;
-      margin: 0 auto 24px;
-    }
-
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 12px 28px;
-      border-radius: var(--radius);
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
-
-    .btn-secondary {
-      display: inline-block;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 15px;
-      padding: 12px 28px;
-      border-radius: var(--radius);
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-
-    /* =============================================
-       STATS BAR
-    ============================================= */
-    #stats-bar {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 20px;
-    }
-    .stats-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      gap: 32px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .stat-item { text-align: center; }
-    .stat-val {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--accent);
-      display: block;
-    }
-    .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-
-    /* =============================================
-       CONTENT WRAPPER (main + sidebar)
-    ============================================= */
-    #content-wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 24px 20px;
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 24px;
-      flex: 1;
-    }
-
-    @media (max-width: 900px) {
-      #content-wrapper { grid-template-columns: 1fr; }
-      #sidebar-wrapper { display: none; }
-    }
-
-    /* =============================================
-       MAIN CONTENT
-    ============================================= */
-    #main-wrapper {}
-
-    .section-header {
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+      text-decoration: none;
+      white-space: nowrap;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
+      gap: 7px;
     }
 
-    .section-title {
-      font-size: 20px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section-title::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 20px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .live-dot {
-      width: 8px; height: 8px;
-      background: var(--live-green);
+    .logo-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      display: inline-block;
-      animation: pulse 1.5s ease-in-out infinite;
+      background: var(--live-dot);
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
     }
+
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(1.3); }
+      50%       { opacity: .55; transform: scale(.85); }
     }
 
-    /* =============================================
-       PERFORMER GRID
-    ============================================= */
-    #performers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    /* Skeleton cards */
-    .skel-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .skel-thumb {
-      width: 100%; padding-top: 75%;
-      background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
-    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-    .skel-body { padding: 10px; }
-    .skel-line {
-      height: 12px; border-radius: 6px;
-      background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-      margin-bottom: 8px;
-    }
-    .skel-line.short { width: 60%; }
-
-    /* Real performer cards */
-    .performer-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-    .performer-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-      box-shadow: 0 8px 30px var(--accent-glow);
-    }
-
-    .thumb-wrap {
+    .search-wrap {
+      flex: 1;
+      max-width: 460px;
       position: relative;
-      width: 100%; padding-top: 75%;
-      overflow: hidden;
-      background: var(--bg-card-hover);
-    }
-    .thumb-wrap img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .performer-card:hover .thumb-wrap img { transform: scale(1.05); }
-
-    .live-badge {
-      position: absolute; top: 8px; left: 8px;
-      background: var(--accent);
-      color: #fff; font-size: 10px; font-weight: 700;
-      padding: 2px 6px; border-radius: 4px;
-      letter-spacing: 0.5px; z-index: 1;
-    }
-    .viewers {
-      position: absolute; bottom: 8px; left: 8px;
-      background: rgba(0,0,0,0.75);
-      color: #fff; font-size: 11px;
-      padding: 2px 6px; border-radius: 4px; z-index: 1;
-    }
-    .hd-tag {
-      position: absolute; top: 8px; right: 8px;
-      background: var(--gold);
-      color: #000; font-size: 9px; font-weight: 800;
-      padding: 2px 5px; border-radius: 4px;
-      letter-spacing: 0.5px; z-index: 1;
     }
 
-    .card-body { padding: 10px; }
-    .card-name { font-weight: 700; font-size: 14px; color: var(--text-primary); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .card-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; display: flex; gap: 6px; flex-wrap: wrap; }
-    .card-topic { font-size: 11px; color: var(--text-secondary); min-height: 28px; line-height: 1.4; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-    .card-btn {
-      display: block;
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 0;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-    .card-btn:hover { background: var(--accent-hover); text-decoration: none; }
-
-    /* Load more */
-    .load-more-wrap { text-align: center; margin-top: 24px; }
-    .btn-load-more {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 14px;
-      padding: 10px 32px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-load-more:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* Post / SEO text block */
-    .seo-block {
-      margin-top: 32px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-    .seo-block h2 { font-size: 18px; margin-bottom: 12px; color: var(--text-primary); }
-    .seo-block p { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.7; }
-    .seo-block ul { margin: 10px 0 10px 20px; list-style: disc; }
-    .seo-block ul li { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.6; }
-
-    .post-footer {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .post-tag {
-      background: var(--bg-card-hover);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 20px;
     }
 
-    /* =============================================
-       SIDEBAR
-    ============================================= */
-    #sidebar-wrapper { display: flex; flex-direction: column; gap: 20px; }
-
-    .sidebar-cta {
-      background: linear-gradient(135deg, #1a0a14, #0d0d1a);
-      border: 1px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-align: center;
-    }
-    .sidebar-cta h3 { font-size: 16px; margin-bottom: 8px; }
-    .sidebar-cta p { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
-    .sidebar-cta a {
-      display: block;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 14px;
-      padding: 10px;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
-    .sidebar-cta a:hover { background: var(--accent-hover); text-decoration: none; }
-
-    .sidebar-widget {
-      background: var(--bg-sidebar);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-    }
-    .sidebar-widget h2 { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .sidebar-widget ul li { margin-bottom: 8px; }
-    .sidebar-widget ul li a { font-size: 13px; color: var(--text-secondary); transition: color 0.2s; }
-    .sidebar-widget ul li a:hover { color: var(--accent); text-decoration: none; }
-
-    .searchBox input {
+    #search {
       width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 8px 14px 8px 36px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color .18s, background .18s;
+    }
+
+    #search::placeholder { color: var(--text-muted); }
+
+    #search:focus {
+      border-color: var(--border-hover);
+      background: #1e1e1e;
+    }
+
+    .header-meta {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      white-space: nowrap;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* ── STATUS BAR ─────────────────────────────────── */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      min-height: 24px;
+    }
+
+    .status-count {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .status-count strong {
+      color: var(--text-secondary);
+    }
+
+    /* ── GRID ───────────────────────────────────────── */
+    #grid {
+      columns: 5 200px;
+      column-gap: 14px;
+    }
+
+    @media (max-width: 900px) { #grid { columns: 3 160px; } }
+    @media (max-width: 560px) { #grid { columns: 2 140px; } }
+
+    /* ── CARD ───────────────────────────────────────── */
+    .card {
+      break-inside: avoid;
+      display: block;
+      margin-bottom: 14px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 8px 12px;
-      color: var(--text-primary);
-      font-size: 13px;
-      outline: none;
-    }
-    .searchBox input:focus { border-color: var(--accent); }
-
-    /* =============================================
-       FOOTER
-    ============================================= */
-    #footer-wrapper {
-      background: var(--bg-header);
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-    }
-    #footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 40px 20px 24px;
-    }
-
-    .age-disclaimer {
-      background: rgba(232,23,93,0.08);
-      border: 1px solid rgba(232,23,93,0.2);
       border-radius: var(--radius);
-      padding: 14px 18px;
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      line-height: 1.6;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .18s, transform .18s, box-shadow .18s;
+      cursor: pointer;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 32px;
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.55);
     }
-    @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
 
-    .footer-brand h3 { font-size: 16px; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 12px; }
-    .footer-col ul li { margin-bottom: 6px; }
-    .footer-col ul li a { font-size: 13px; color: var(--text-secondary); }
-    .footer-col ul li a:hover { color: var(--accent); }
+    .card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #111;
+      overflow: hidden;
+    }
 
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      font-size: 12px;
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .card:hover .card-thumb img {
+      transform: scale(1.03);
+    }
+
+    .card-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text-muted);
+    }
+
+    .badge-live {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--live-dot);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .badge-viewers {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(4px);
+      color: var(--text-secondary);
+      font-size: 11.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-body {
+      padding: 10px 11px 11px;
+    }
+
+    .card-name {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 10.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      max-width: 90px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── STATES ─────────────────────────────────────── */
+    #state-empty, #state-error {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      color: var(--text-muted);
+      gap: 14px;
+      text-align: center;
+    }
+
+    #state-empty.visible,
+    #state-error.visible {
+      display: flex;
+    }
+
+    .state-icon {
+      font-size: 28px;
+      opacity: .4;
+    }
+
+    /* ── SKELETON (loading) ─────────────────────────── */
+    #state-loading {
+      display: none;
+      columns: 5 200px;
+      column-gap: 14px;
+    }
+
+    #state-loading.visible { display: block; }
+
+    @media (max-width: 900px) { #state-loading { columns: 3 160px; } }
+    @media (max-width: 560px) { #state-loading { columns: 2 140px; } }
+
+    .skel-card {
+      break-inside: avoid;
+      margin-bottom: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .skel-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(100deg, var(--bg-card) 40%, var(--border) 50%, var(--bg-card) 60%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease-in-out infinite;
+    }
+
+    .skel-line {
+      height: 10px;
+      margin: 11px;
+      border-radius: 4px;
+      background: linear-gradient(100deg, var(--bg-card) 40%, var(--border) 50%, var(--bg-card) 60%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease-in-out infinite;
+    }
+
+    .skel-line.short { width: 45%; margin-top: -3px; }
+
+    @keyframes shimmer {
+      0%   { background-position: 150% 0; }
+      100% { background-position: -50% 0; }
+    }
+
+    /* ── FALLBACK NOTICE ────────────────────────────── */
+    .fallback-notice {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 18px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+    }
+
+    .fallback-notice.visible { display: flex; }
+
+    /* ── PAGINATION ─────────────────────────────────── */
+    #pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+    }
+
+    .page-btn {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 13px;
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color .15s, color .15s, background .15s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .page-btn:hover:not(:disabled) {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+      background: #1e1e1e;
+    }
+
+    .page-btn:disabled {
+      opacity: .3;
+      cursor: default;
+    }
+
+    .page-info {
+      font-size: 13px;
+      color: var(--text-muted);
+      min-width: 90px;
+      text-align: center;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
       line-height: 1.8;
     }
 
-    /* Back to top */
-    #back-top {
-      position: fixed; bottom: 24px; right: 24px;
-      background: var(--accent);
-      color: #fff;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s, transform 0.2s;
-      box-shadow: 0 4px 16px var(--accent-glow);
-      z-index: 200;
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
     }
-    #back-top.visible { opacity: 1; pointer-events: auto; }
-    #back-top:hover { transform: translateY(-2px); }
+
+    footer a:hover { color: var(--text-secondary); }
+
+    /* ── ACCESSIBILITY ──────────────────────────────── */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── SVG ICONS ──────────────────────────────────── */
+    .icon { display: inline-flex; }
   </style>
 </head>
-
 <body>
 
-<div id="outer-wrapper">
+<header>
+  <a class="logo" href="#">
+    <span class="logo-dot"></span>
+    LiveCams
+  </a>
+  <div class="search-wrap">
+    <label for="search" class="sr-only">Search rooms by name or tag</label>
+    <span class="search-icon" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </span>
+    <input id="search" type="search" placeholder="Search by name or tag…" autocomplete="off" spellcheck="false" />
+  </div>
+  <div class="header-meta" id="header-meta"></div>
+</header>
 
-  <!-- ====== HEADER ====== -->
-  <div id="header-wrapper">
-    <div id="header-inner">
-      <a class="site-logo" href="/">Live<span>Cams</span></a>
-      <nav class="header-nav">
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank" class="active">🔴 Female</a>
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">💑 Couples</a>
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">👨 Male</a>
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">⭐ Popular</a>
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/signup" class="header-cta" rel="nofollow noopener" target="_blank">Join Free</a>
-      </nav>
-    </div>
+<main>
+  <div class="status-bar">
+    <div class="status-count" id="status-count"></div>
   </div>
 
-  <!-- ====== HERO ====== -->
-  <div id="hero">
-    <h1>Watch <span>Live HD Cams</span> Online 24/7</h1>
-    <p>Browse thousands of live performers streaming right now. HD quality, free to watch.</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat" rel="nofollow noopener" target="_blank">▶ Browse All Cams</a>
-      <a class="btn-secondary" href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/signup" rel="nofollow noopener" target="_blank">Create Free Account</a>
-    </div>
+  <div class="fallback-notice" id="fallback-notice">
+    <span aria-hidden="true">⚠</span>
+    <span>Live data is temporarily unavailable — showing a sample of rooms. <a href="#" id="retry-link" style="color: var(--text-primary); text-decoration: underline;">Retry live data</a></span>
   </div>
 
-  <!-- ====== STATS BAR ====== -->
-  <div id="stats-bar">
-    <div class="stats-inner">
-      <div class="stat-item">
-        <span class="stat-val" id="stat-online">1,200+</span>
-        <span class="stat-label">Online Now</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">HD</span>
-        <span class="stat-label">Stream Quality</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">Free</span>
-        <span class="stat-label">To Browse</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">24/7</span>
-        <span class="stat-label">Always Live</span>
-      </div>
-    </div>
+  <div id="state-loading" aria-hidden="true" aria-label="Loading rooms"></div>
+
+  <div id="state-empty">
+    <div class="state-icon">◎</div>
+    <span>No rooms match your search.</span>
   </div>
 
-  <!-- ====== MAIN CONTENT + SIDEBAR ====== -->
-  <div id="content-wrapper">
-
-    <!-- Main -->
-    <div id="main-wrapper">
-
-      <div class="section-header">
-        <h2 class="section-title">
-          <span class="live-dot"></span>
-          Live Performers
-        </h2>
-      </div>
-
-      <!-- Performer grid with skeleton placeholders -->
-      <div id="performers-grid">
-        <div class="skel-card" id="skel1"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel2"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel3"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel4"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel5"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel6"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel7"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel8"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel9"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-        <div class="skel-card" id="skel10"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
-      </div>
-
-      <div class="load-more-wrap">
-        <button class="btn-load-more" onclick="loadMorePerformers()">Load More</button>
-      </div>
-
-      <!-- SEO Text Block -->
-      <div class="seo-block">
-        <h2>Watch Live HD Cam Shows Online</h2>
-        <p>Our platform brings you a curated live stream directory updated in real-time. Browse female, male, couple, and transgender performers across hundreds of categories. Every stream is free to preview — no sign-up required to browse.</p>
-        <p>Whether you're looking for HD cam shows, private shows, or simply want to discover new performers, our directory makes it easy to find exactly what you're after.</p>
-        <ul>
-          <li>Thousands of performers online 24/7</li>
-          <li>HD and ultra-HD quality streams</li>
-          <li>New models added daily</li>
-          <li>Private shows available</li>
-          <li>Free account — no credit card required to browse</li>
-        </ul>
-
-        <div class="post-footer">
-          <span class="post-tag">live cams</span>
-          <span class="post-tag">HD streams</span>
-          <span class="post-tag">adult entertainment</span>
-          <span class="post-tag">online performers</span>
-          <span style="font-size:12px;color:var(--text-muted);">Admin</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-
-      <div class="sidebar-cta">
-        <h3>🔴 Join Free Today</h3>
-        <p>Watch unlimited live HD streams. No credit card required to get started.</p>
-        <a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/signup" rel="nofollow noopener" target="_blank">
-          Create Free Account
-        </a>
-      </div>
-
-      <div class="sidebar-widget">
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">🔴 Female Live</a></li>
-          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">💑 Couples</a></li>
-          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">👨 Male Cams</a></li>
-          <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">⭐ Popular Now</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-widget">
-        <h2>Categories</h2>
-        <ul>
-          <li><a href="#">HD Streams <span style="color:var(--text-muted);font-size:11px;">(1,200+)</span></a></li>
-          <li><a href="#">New Models <span style="color:var(--text-muted);font-size:11px;">(340)</span></a></li>
-          <li><a href="#">Popular Now <span style="color:var(--text-muted);font-size:11px;">(520)</span></a></li>
-          <li><a href="#">Private Shows <span style="color:var(--text-muted);font-size:11px;">(89)</span></a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-widget">
-        <h2>Search</h2>
-        <div class="searchBox">
-          <input type="text" placeholder="Search performers..." />
-        </div>
-      </div>
-
-    </div>
+  <div id="state-error">
+    <div class="state-icon">⚠</div>
+    <span id="error-msg">Failed to load rooms. Please try again.</span>
+    <button class="page-btn" onclick="init()">Retry</button>
   </div>
 
-  <!-- ====== FOOTER ====== -->
-  <div id="footer-wrapper">
-    <div id="footer-inner">
+  <div id="grid"></div>
 
-      <div class="age-disclaimer">
-        ⚠️ <strong>Adult Content Warning:</strong> This site contains links to adult content. You must be 18 years of age or older to proceed. By continuing, you confirm that you are an adult and agree to the Terms of Service. This site uses affiliate partnerships with third-party providers.
-      </div>
-
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Live Cam Entertainment</h3>
-          <p>Discover the best live streaming entertainment. Updated in real-time with the latest online performers and exclusive shows.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Browse</h4>
-          <ul>
-            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=female" rel="nofollow noopener" target="_blank">Female Cams</a></li>
-            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=couple" rel="nofollow noopener" target="_blank">Couples</a></li>
-            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/chat?livetab=male" rel="nofollow noopener" target="_blank">Male Cams</a></li>
-            <li><a href="https://bongacams.com/track?c=18145&csurl=https://bongacams.com/popular-chat?livetab=female" rel="nofollow noopener" target="_blank">Popular Now</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <ul>
-            <li><a href="/p/contact.html">Contact</a></li>
-            <li><a href="/p/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/p/terms.html">Terms of Use</a></li>
-            <li><a href="/p/dmca.html">DMCA</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> Live Cam Entertainment. All rights reserved. 18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement.</p>
-        <p>Affiliate disclosure: This site may earn commissions from links.</p>
-      </div>
-
-    </div>
+  <div id="pagination">
+    <button class="page-btn" id="btn-prev" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Prev
+    </button>
+    <span class="page-info" id="page-info"></span>
+    <button class="page-btn" id="btn-next" disabled>
+      Next
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
+</main>
 
-</div><!-- /outer-wrapper -->
+<footer>
+  <p>All performers are consenting adults 18+. &nbsp;·&nbsp;
+    <a href="https://chaturbate.com/terms/" target="_blank" rel="noopener">Terms</a> &nbsp;·&nbsp;
+    <a href="https://chaturbate.com/privacy/" target="_blank" rel="noopener">Privacy</a>
+  </p>
+</footer>
 
-<!-- Back to top -->
-<div id="back-top" onclick="scrollToTop()">↑</div>
-
-<!-- ====================================================
-     JAVASCRIPT: API Fetching + Rendering
-===================================================== -->
 <script>
-(function () {
-  'use strict';
+  /* ── CONFIG ─────────────────────────────────────── */
+  const API_URL   = 'https://chaturbate.com/api/public/affiliates/onlinerooms/?wm=T2CSW&client_ip=request_ip&limit=500';
+  const REVSHARE  = (room) => `https://chaturbate.com/in/?tour=APi5&campaign=T2CSW&track=default&room=${room}`;
+  const PER_PAGE  = 40;
 
-  var API_ORIGIN  = '/api/performers';
-  var PAGE_SIZE   = 10;
-  var currentOffset = 0;
-  var SKEL_COUNT  = 10;
+  /* ── STATIC FALLBACK DATA ───────────────────────────
+     Used only when the live API call fails (CORS block, network error,
+     outage, etc.) so the page never shows a dead end. Links still use
+     the revshare format via REVSHARE(), just with hardcoded room names
+     and no live viewer/thumbnail data. */
+  const FALLBACK_ROOMS = [
+    { username: 'sophia_rae',    num_users: 2140, tags: ['blonde', 'teen', '18'] },
+    { username: 'luna_marie',    num_users: 1876, tags: ['brunette', 'lovense', 'petite'] },
+    { username: 'kittykat_xo',   num_users: 3320, tags: ['redhead', 'squirt', 'anal'] },
+    { username: 'valeriaxx',     num_users: 987,  tags: ['latina', 'bigass', 'dance'] },
+    { username: 'emily_grace',   num_users: 1543, tags: ['couple', 'young', 'feet'] },
+    { username: 'jade_moon',     num_users: 2765, tags: ['asian', 'petite', 'roleplay'] },
+    { username: 'natasha_belle', num_users: 1122, tags: ['milf', 'bigboobs', 'mature'] },
+    { username: 'zoe_summers',   num_users: 4012, tags: ['blonde', 'anal', 'squirt'] },
+    { username: 'ariel_storm',   num_users: 856,  tags: ['teen', 'shy', 'new'] },
+    { username: 'mia_flores',    num_users: 1998, tags: ['latina', 'curvy', 'lovense'] },
+    { username: 'chloe_vega',    num_users: 1345, tags: ['brunette', 'tattoo', 'squirt'] },
+    { username: 'harper_lee_x',  num_users: 623,  tags: ['redhead', 'freckles', 'new'] },
+  ];
 
-  // Footer year
-  var fy = document.getElementById('footer-year');
-  if (fy) fy.textContent = new Date().getFullYear();
+  /* ── STATE ──────────────────────────────────────── */
+  let allRooms    = [];
+  let filtered    = [];
+  let currentPage = 1;
+  let searchQuery = '';
+  let usingFallback = false;
 
-  // Back to top
-  var backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', function () {
-    if (!backTop) return;
-    if (window.scrollY > 300) backTop.classList.add('visible');
-    else backTop.classList.remove('visible');
-  }, { passive: true });
+  /* ── ELEMENTS ───────────────────────────────────── */
+  const $grid      = document.getElementById('grid');
+  const $search    = document.getElementById('search');
+  const $loading   = document.getElementById('state-loading');
+  const $empty     = document.getElementById('state-empty');
+  const $error     = document.getElementById('state-error');
+  const $errMsg    = document.getElementById('error-msg');
+  const $count     = document.getElementById('status-count');
+  const $meta      = document.getElementById('header-meta');
+  const $prev      = document.getElementById('btn-prev');
+  const $next      = document.getElementById('btn-next');
+  const $pageInfo  = document.getElementById('page-info');
+  const $notice    = document.getElementById('fallback-notice');
+  const $retryLink = document.getElementById('retry-link');
 
-  window.scrollToTop = function () {
+  /* ── SKELETON ───────────────────────────────────── */
+  function renderSkeleton(count = 15) {
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+      const card = document.createElement('div');
+      card.className = 'skel-card';
+      const thumb = document.createElement('div');
+      thumb.className = 'skel-thumb';
+      const line1 = document.createElement('div');
+      line1.className = 'skel-line';
+      const line2 = document.createElement('div');
+      line2.className = 'skel-line short';
+      card.appendChild(thumb);
+      card.appendChild(line1);
+      card.appendChild(line2);
+      frag.appendChild(card);
+    }
+    $loading.innerHTML = '';
+    $loading.appendChild(frag);
+  }
+  renderSkeleton();
+
+  /* ── INIT ───────────────────────────────────────── */
+  async function init() {
+    showState('loading');
+    $notice.classList.remove('visible');
+
+    try {
+      const res  = await fetch(API_URL);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const rooms = Array.isArray(data.results) ? data.results : [];
+
+      if (rooms.length === 0) throw new Error('No rooms returned.');
+
+      allRooms      = rooms;
+      usingFallback = false;
+      $meta.textContent = `${allRooms.length.toLocaleString()} online`;
+      applyFilter();
+      showState('grid');
+    } catch (err) {
+      // Network error, CORS block, or empty payload — fall back to a
+      // static hardcoded grid so the page never dead-ends on a blank error.
+      allRooms      = FALLBACK_ROOMS;
+      usingFallback = true;
+      $meta.textContent = 'sample rooms';
+      $notice.classList.add('visible');
+      applyFilter();
+      showState('grid');
+    }
+  }
+
+  $retryLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    init();
+  });
+
+  /* ── FILTER + SEARCH ────────────────────────────── */
+  function applyFilter() {
+    const q = searchQuery.trim().toLowerCase();
+
+    if (!q) {
+      filtered = [...allRooms];
+    } else {
+      filtered = allRooms.filter(r => {
+        if (!r || typeof r.username !== 'string') return false;
+        const inName = r.username.toLowerCase().includes(q);
+        const inTags = Array.isArray(r.tags) && r.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(q));
+        const inSubj = typeof r.subject === 'string' && r.subject.toLowerCase().includes(q);
+        return inName || inTags || inSubj;
+      });
+    }
+
+    currentPage = 1;
+    render();
+  }
+
+  /* ── RENDER PAGE ────────────────────────────────── */
+  function render() {
+    $grid.innerHTML = '';
+
+    if (filtered.length === 0) {
+      showState('empty');
+      updatePagination();
+      return;
+    }
+
+    showState('grid');
+
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    currentPage = Math.min(currentPage, totalPages);
+
+    const start = (currentPage - 1) * PER_PAGE;
+    const slice = filtered.slice(start, start + PER_PAGE);
+
+    // Update status
+    const fromN = start + 1;
+    const toN   = Math.min(start + PER_PAGE, filtered.length);
+    $count.innerHTML = filtered.length < allRooms.length
+      ? `<strong>${filtered.length.toLocaleString()}</strong> results — showing ${fromN}–${toN}`
+      : `<strong>${filtered.length.toLocaleString()}</strong> rooms live — showing ${fromN}–${toN}`;
+
+    // Build cards
+    const frag = document.createDocumentFragment();
+    slice.forEach(room => {
+      const a = buildCard(room);
+      frag.appendChild(a);
+    });
+    $grid.appendChild(frag);
+
+    updatePagination(totalPages);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Utilities
-  function formatViewers(n) {
-    if (!n && n !== 0) return '';
-    if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
-    return n.toString();
   }
 
-  function truncate(str, max) {
-    if (!str) return '';
-    return str.length > max ? str.slice(0, max) + '\u2026' : str;
+  /* ── BUILD CARD ─────────────────────────────────── */
+  function buildCard(room) {
+    // Coerce all values from untrusted API data before use
+    const username = typeof room.username === 'string' ? room.username : String(room.username || '');
+    const viewers  = Math.max(0, parseInt(room.num_users, 10) || 0).toLocaleString();
+    const tags     = Array.isArray(room.tags) ? room.tags.slice(0, 4).map(t => String(t || '').trim()).filter(Boolean) : [];
+    const imgSrc   = typeof room.image_url_360x270 === 'string' ? room.image_url_360x270
+                   : typeof room.image_url         === 'string' ? room.image_url : '';
+
+    // Outer anchor — set via DOM properties, never innerHTML
+    const a = document.createElement('a');
+    a.className = 'card';
+    a.href      = REVSHARE(encodeURIComponent(username));
+    a.target    = '_blank';
+    a.rel       = 'noopener noreferrer';
+    a.setAttribute('aria-label', username);
+
+    // Thumbnail wrapper
+    const thumb = document.createElement('div');
+    thumb.className = 'card-thumb';
+
+    if (imgSrc) {
+      const img = document.createElement('img');
+      img.src     = imgSrc;
+      img.alt     = username;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      thumb.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'card-thumb-placeholder';
+      // Static SVG — no dynamic data, safe as innerHTML
+      ph.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".3"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`;
+      thumb.appendChild(ph);
+    }
+
+    // LIVE badge — no dynamic content
+    const badgeLive = document.createElement('span');
+    badgeLive.className   = 'badge-live';
+    badgeLive.textContent = 'Live';
+    thumb.appendChild(badgeLive);
+
+    // Viewers badge — use textContent, never innerHTML for the count
+    const badgeViewers = document.createElement('span');
+    badgeViewers.className = 'badge-viewers';
+    // Static icon SVG is safe
+    badgeViewers.innerHTML = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`;
+    const viewerText = document.createTextNode(' ' + viewers);
+    badgeViewers.appendChild(viewerText);
+    thumb.appendChild(badgeViewers);
+
+    a.appendChild(thumb);
+
+    // Card body
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    const nameEl = document.createElement('div');
+    nameEl.className   = 'card-name';
+    nameEl.textContent = username;
+    body.appendChild(nameEl);
+
+    if (tags.length) {
+      const tagsEl = document.createElement('div');
+      tagsEl.className = 'card-tags';
+      tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className   = 'tag';
+        span.textContent = t;
+        tagsEl.appendChild(span);
+      });
+      body.appendChild(tagsEl);
+    }
+
+    a.appendChild(body);
+    return a;
   }
 
-  function sanitize(str) {
-    if (!str) return '';
+  /* ── PAGINATION ─────────────────────────────────── */
+  function updatePagination(totalPages = 0) {
+    $prev.disabled = currentPage <= 1;
+    $next.disabled = currentPage >= totalPages;
+    $pageInfo.textContent = totalPages > 0 ? `Page ${currentPage} / ${totalPages}` : '';
+    document.getElementById('pagination').style.display = totalPages > 1 ? 'flex' : 'none';
+  }
+
+  $prev.addEventListener('click', () => {
+    if (currentPage > 1) { currentPage--; render(); }
+  });
+
+  $next.addEventListener('click', () => {
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    if (currentPage < totalPages) { currentPage++; render(); }
+  });
+
+  /* ── SEARCH ─────────────────────────────────────── */
+  let searchTimer;
+  $search.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      searchQuery = $search.value;
+      applyFilter();
+    }, 260);
+  });
+
+  /* ── HELPERS ────────────────────────────────────── */
+  function showState(state) {
+    $loading.classList.toggle('visible', state === 'loading');
+    $empty.classList.toggle('visible',   state === 'empty');
+    $error.classList.toggle('visible',   state === 'error');
+    $grid.style.display = state === 'grid' ? '' : 'none';
+  }
+
+  function esc(str) {
     return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
@@ -773,150 +783,8 @@
       .replace(/"/g, '&quot;');
   }
 
-  // Build a performer card
-  function buildCard(p) {
-    var img = (p.profile_images && p.profile_images.thumbnail_image_medium_live)
-           || (p.profile_images && p.profile_images.thumbnail_image_medium)
-           || '';
-    if (img && img.startsWith('//')) img = 'https:' + img;
-
-    var name    = sanitize(p.display_name || p.username || '');
-    var age     = p.display_age ? sanitize(String(p.display_age)) : '';
-    var viewers = formatViewers(p.members_count);
-    var topic   = truncate(p.chat_topic || '', 80);
-    var chatUrl = sanitize(p.chat_url_on_home_page || p.chat_url || '#');
-    var isHD    = p.hd_cam;
-
-    return '<div class="performer-card" onclick="window.open(\'' + chatUrl + '\',\'_blank\')">'
-      + '<div class="thumb-wrap">'
-      + '<span class="live-badge">LIVE</span>'
-      + (viewers ? '<span class="viewers">\uD83D\uDC41 ' + sanitize(viewers) + '</span>' : '')
-      + (isHD ? '<span class="hd-tag">HD</span>' : '')
-      + (img
-          ? '<img alt="' + name + ' live cam" loading="lazy" src="' + sanitize(img) + '">'
-          : '<div style="height:100%;background:var(--bg-card-hover);"></div>')
-      + '</div>'
-      + '<div class="card-body">'
-      + '<div class="card-name">' + name + '</div>'
-      + '<div class="card-meta">'
-      + (age ? '<span>\uD83C\uDF82 ' + age + '</span>' : '')
-      + '</div>'
-      + '<div class="card-topic">' + sanitize(topic) + '</div>'
-      + '<a class="card-btn" href="' + chatUrl + '" rel="nofollow noopener" target="_blank">'
-      + '\u25B6 Watch Live'
-      + '</a>'
-      + '</div>'
-      + '</div>';
-  }
-
-  // Remove skeleton placeholders
-  function clearSkeletons() {
-    for (var i = 1; i <= SKEL_COUNT; i++) {
-      var el = document.getElementById('skel' + i);
-      if (el) el.parentNode.removeChild(el);
-    }
-  }
-
-  // Fetch with automatic retry
-  function fetchWithRetry(url, attempts, delay) {
-    return fetch(url)
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .catch(function (err) {
-        if (attempts <= 1) throw err;
-        return new Promise(function (resolve) { setTimeout(resolve, delay); })
-          .then(function () { return fetchWithRetry(url, attempts - 1, delay * 2); });
-      });
-  }
-
-  // Fetch and render performers
-  function fetchPerformers(offset, limit, append) {
-    var url = API_ORIGIN + '?limit=' + limit + '&offset=' + offset;
-    var grid = document.getElementById('performers-grid');
-    if (!grid) return;
-
-    fetchWithRetry(url, 3, 1000)
-      .then(function (data) {
-        if (!append) clearSkeletons();
-
-        if (Array.isArray(data) && data.length > 0) {
-          var statEl = document.getElementById('stat-online');
-          if (statEl) {
-            var total = data.reduce(function (sum, p) { return sum + (p.members_count || 0); }, 0);
-            statEl.textContent = total.toLocaleString() + '+';
-          }
-
-          var html = '';
-          data.forEach(function (p) { html += buildCard(p); });
-
-          if (append) {
-            grid.insertAdjacentHTML('beforeend', html);
-          } else {
-            grid.innerHTML = html;
-          }
-        } else if (!append) {
-          grid.innerHTML = '<p style="color:var(--text-muted);padding:24px;text-align:center;grid-column:1/-1;">No performers online at the moment. Check back soon.</p>';
-        }
-      })
-      .catch(function () {
-        if (!append) {
-          clearSkeletons();
-          grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px 24px;">'
-            + '<p style="color:var(--text-muted);margin-bottom:16px;">Could not reach the live feed. Check your connection.</p>'
-            + '<button onclick="retryLoad()" style="background:var(--accent);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">↻ Retry</button>'
-            + '</div>';
-        }
-      });
-  }
-
-  // Load more
-  window.loadMorePerformers = function () {
-    currentOffset += PAGE_SIZE;
-    fetchPerformers(currentOffset, PAGE_SIZE, true);
-  };
-
-  // Retry from scratch
-  window.retryLoad = function () {
-    currentOffset = 0;
-    var grid = document.getElementById('performers-grid');
-    if (grid) {
-      grid.innerHTML = '';
-      for (var i = 1; i <= SKEL_COUNT; i++) {
-        grid.innerHTML += '<div class="skel-card" id="skel' + i + '"><div class="skel-thumb"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>';
-      }
-    }
-    fetchPerformers(0, PAGE_SIZE, false);
-  };
-
-  // Initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      fetchPerformers(0, PAGE_SIZE, false);
-    });
-  } else {
-    fetchPerformers(0, PAGE_SIZE, false);
-  }
-
-})();
+  /* ── KICK OFF ───────────────────────────────────── */
+  init();
 </script>
-
-<!-- JSON-LD Structured Data for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Live Cam Entertainment",
-  "url": "https://yoursite.blogspot.com/",
-  "description": "Watch live streaming performers 24/7. Browse thousands of HD cam shows updated in real-time.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://yoursite.blogspot.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
 </body>
 </html>
